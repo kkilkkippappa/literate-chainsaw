@@ -1,0 +1,368 @@
+/* 선택창 */
+
+body{position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;}
+
+
+/* condition */
+
+#conditionButton{position: absolute;
+width: 500px;
+height: 250px;
+left: 770px;
+top: 686px;
+
+background: #E5E1FF;
+border-radius: 50px;}
+
+
+/* 오늘 내 컨디션 * Condition */
+
+#conditionText{position: absolute;
+width: 285px;
+height: 30.49px;
+left: 810px;
+top: 708px;
+
+font-family: godoMaum;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 41px;
+
+color: #000000;}
+
+
+
+/* timetable */
+
+#timetableButton{position: absolute;
+width: 500px;
+height: 250px;
+left: 170px;
+top: 686px;
+
+background: #E5E1FF;
+border-radius: 49px;}
+
+
+/* 시간표 * Timetable */
+
+#timetableText{position: absolute;
+width: 206px;
+height: 30.49px;
+left: 210px;
+top: 708px;
+
+font-family: godoMaum;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 41px;
+
+color: #000000;}
+
+
+
+/* todolist */
+
+#todolistButton{position: absolute;
+width: 500px;
+height: 250px;
+left: 770px;
+top: 348px;
+
+background: #E5E1FF;
+border-radius: 50px;}
+
+
+/* 할 일 * To Do List */
+
+#todolistText{position: absolute;
+width: 198px;
+height: 30.49px;
+left: 810px;
+top: 370px;
+
+font-family: godoMaum;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 41px;
+
+color: #000000;}
+
+
+
+/* diary */
+
+#diaryButton{position: absolute;
+width: 500px;
+height: 250px;
+left: 171px;
+top: 348px;
+
+background: #E5E1FF;
+border-radius: 50px;}
+
+
+/* 일기 * Diary */
+
+#diaryText{position: absolute;
+width: 130px;
+height: 40px;
+left: 210px;
+top: 370px;
+
+font-family: godoMaum;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 41px;
+
+color: #000000;}
+
+
+
+/* 안녕하세요, (이름)님! 매일을 가치 있게 만들 준비 되셨나요? */
+
+#selectText{position: absolute;
+width: 500px;
+height: 100px;
+left: 150px;
+top: 160px;
+
+font-family: godoMaum;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 54px;
+display: flex;
+align-items: center;
+
+color: #000000;}
+
+
+
+/* 가치 있는 하루 */
+
+#selectTitle{position: absolute;
+width: 400px;
+height: 80px;
+left: 90px;
+top: 50px;
+
+font-family: godoMaum;
+font-style: normal;
+font-weight: normal;
+font-size: 96px;
+line-height: 108px;
+display: flex;
+align-items: center;
+
+color: #000000;}
+
+
+
+/* checklist 1 */
+
+#todolistImage{position: absolute;
+width: 120px;
+height: 120px;
+left: 1118px;
+top: 473px;
+
+background: url(checklist.png);}
+
+
+/* healthcare 1 */
+
+#conditionImage{position: absolute;
+width: 120px;
+height: 120px;
+left: 1118px;
+top: 811px;
+background: url(health-check.png);}
+
+
+/* calendar 2 */
+
+#timetableImage{position: absolute;
+width: 120px;
+height: 120px;
+left: 520px;
+top: 811px;
+
+background: url(calendar.png);}
+
+
+/* journal 2 */
+
+#diaryImage{position: absolute;
+width: 120px;
+height: 120px;
+left: 520px;
+top: 473px;
+
+background: url(journal.png);}
+
+.title{
+    /* Group 5 */
+position: absolute;
+width: 648px;
+height: 163px;
+left: 396px;
+top: 214px;
+}
+.login_form{
+    
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 12%;
+    border: 1px solid #888;
+    width: 50%;
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#title_letter {
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 800px;
+    top: 100px;
+    font-family: godoMaum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 75px;
+    line-height: 163px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+#title_rectangle {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    left: 800px;
+    top: 140px;
+    background: #E5E1FF;
+    filter: blur(10px);
+    border-radius: 322px;
+}
+
+ #login_rectangle {
+    position: absolute;
+    width: 626px;
+    height: 235px;
+    left: calc(50% - 626px/2);
+    top: 300px;
+    background: #E5E1FF;
+    filter: blur(10px);
+    border-radius: 31px;
+}
+
+#input_id{
+position: absolute;
+width: 300px;
+height: 49px;
+left: 567px;
+top: 491px;
+
+background: #FFFFFF;
+box-shadow: inset 1px 1px 10px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+#input_password{
+position: absolute;
+width: 300px;
+height: 49px;
+left: 567px;
+top: 587px;
+
+background: #FFFFFF;
+box-shadow: inset 1px 1px 10px 1px rgba(0, 0, 0, 0.1), inset -1px -1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+#label_id{
+    
+position: absolute;
+width: 28px;
+height: 45px;
+left: 515px;
+top: 501px;
+
+font-family: godoMaum;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 54px;
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #000000;
+}
+#label_password{
+    position: absolute;
+width: 108px;
+height: 45px;
+left: 436px;
+top: 589px;
+
+font-family: godoMaum;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 54px;
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #000000;
+
+}
+
+button{
+    position: absolute;
+width: 100px;
+height: 100px;
+left: 899px;
+top: 512px;
+
+background: #FFFFFF;
+box-shadow: inset -1px -1px 4px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
+border-radius: 15px;
+}

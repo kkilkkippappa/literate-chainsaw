@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>todolist</title>
+    <link rel='stylesheet' href='/stylesheets/main.css' >
+    
+    <style>
+      @font-face {
+          font-family: godomaum;
+          src: url(GODOMAUM.TTF);
+      }
+      body{
+          position: relative;
+          width: 1440px;
+          height: 1024px;
+          background: #FFFFFF;
+          font-family:godomaum;
+      }
+      .img1{
+          height: 50%;
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+      }
+      #login{
+            font-size: 48px;
+            position: fixed;
+            right: 30px;
+            top: 15px;
+        }
+      #title{
+          font-size: 100px;
+          position: fixed;
+          left: 30px;
+          top: 30px;
+          display: flex;
+          align-items: center;
+      }
+      #subtitle{
+          font-size: 40px;
+          position: fixed;
+          left: 100px;
+          top: 150px;
+      }
+      #diary{
+          position: fixed;
+          width: 400px;
+          height: 200px;
+          background-color: #e5e1ff;
+          border-radius: 30px;
+          font-size: 50px;
+          padding: 30px;
+          top: 30%;
+          left: 20%;
+      }
+      #list{
+          position: fixed;
+          width: 400px;
+          height: 200px;
+          background-color: #e5e1ff;
+          border-radius: 30px;
+          font-size: 50px;
+          padding: 30px;
+          top: 30%;
+          right: 20%;
+      }
+      #timetable{
+          position: fixed;
+          width: 400px;
+          height: 200px;
+          background-color: #e5e1ff;
+          border-radius: 30px;
+          font-size: 50px;
+          padding: 30px;
+          bottom: 10%;
+          left: 20%;
+      }
+      #condition{
+          position: fixed;
+          width: 400px;
+          height: 200px;
+          background-color: #e5e1ff;
+          border-radius: 30px;
+          font-size: 50px;
+          padding: 30px;
+          bottom: 10%;
+          right: 20%;
+      }
+  </style>
+  </head>
+  <body>
+    <div id="title">가치 있는 하루</div>
+    <div id="subtitle">
+    안녕하세요!<br>
+    매일을 가치 있게 만들 준비 되셨나요?
+    </div>
+    <div id="diary">
+        <a href="http://localhost:8080/diary">일기 * Diary</a>
+        <img class="img1" src="/images/journal.png" alt="">
+    </div>
+    <div id="list">
+        <a href="todolist.html">할 일 * To Do List</a>
+        <img class="img1" src="/images/checklist.png" alt="">
+    </div>
+    <div id="timetable">
+        <a href="timetable.html">시간표 * Timetable</a>
+        <img class="img1" src="/images/calendar.png" alt="">
+    </div>
+    <div id="condition">
+        <a href="condition.html">오늘 내 컨디션 * Condition</a>
+        <img class="img1" src="/images/health-check.png" alt="">
+    </div>
+
+
+    <!--로그인 폼-->
+    <div class="modal" id="myModal">
+
+      <div class="modal-content">
+        <span class="close">&timesd;</span>
+        <!--타이틀-->
+      <div>
+        <div id = 'title_rectangle'></div>
+        <h2 id='title_letter' class="title">가치 있는 하루</h2>
+      </div>
+
+      <!--로그인 페이지에서 기본페이지(/)로 데이터 전송!-->
+      <div>
+        <div id = 'login_rectangle'></div>
+        <form action="http://localhost:8080/users/login">
+            <div>
+                <label for="input_id" id = 'label_id'>id</label>
+                <input name= "login_id" type="text" placeholder="id 입력" id = 'input_id' required>
+            </div>
+            <div>
+                <label for="input_password" id = 'label_password'>password</label>
+                <input name= "login_password" type="password" placeholder="비밀번호 입력" id = 'input_password'required>
+            </div>
+            <button>로그인</button>
+        </form>
+    </div>
+
+    <!--회원가입 문구-->
+    <div>
+      <!--js 이용해 a 누를 시 post 하는거 만들어야 한다.-->
+      <h4>아직 회원이 아니신가요?</h4>
+      <a href="http://localhost:8080/users/signup"><h5>회원가입</h5></a>
+    
+    </div>
+
+    <!--아이디/비밀번호 찾기 문구-->
+    <div>
+        <h4>아이디나 비밀번호를 잊으셨나요?</h4>
+        <h5>아이디/비밀번호 찾기</h5>
+    </div>
+  </div><!--form 끝!-->
+  </div>  <!--로그인 폼 끝!-->
+  <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+ 
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];                                          
+
+    // When the user clicks on the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+         modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+ }
+    </script>
+</body>
+</html>

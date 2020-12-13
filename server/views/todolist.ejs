@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/todolist.css">
+    <title>가치있는 하루</title>
+</head>
+<body>
+    <div class="calendar">
+        <div class="header">
+            <div class="year-month">0</div>
+            <div class="nav">
+                <button class="nav-btn go-prev" onclick="preMonth()">&lt;</button>
+                <button class="nav-btn go-today" onclick="goToday()">Today</button>
+                <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="days">
+                <div class="day">일</div>
+                <div class="day">월</div>
+                <div class="day">화</div>
+                <div class="day">수</div>
+                <div class="day">목</div>
+                <div class="day">금</div>
+                <div class="day">토</div>
+            </div>
+            <div class="dates"></div>
+        </div>
+    </div>
+
+    <!--모달창-->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <form action="">
+                <label for="title">제목
+                    <input type="text" id="title">
+                </label>
+                <br>
+                <label for="content">내용
+                    <input type="text" id="content">
+                </label>
+            </form>
+            <span class="close">&times;</span>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+     
+        // Get the button that opens the modal
+        var click = document.getElementsByClassName("date");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];  
+        
+        // When the user clicks on the button, open the modal 
+        click.onclick = function() {
+            modal.style.display = "block";
+        }
+    
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+             modal.style.display = "none";
+        }
+    
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+     }
+        </script>
+</body>
+<script src="/javascripts/calendar.js"></script>
+</html>
