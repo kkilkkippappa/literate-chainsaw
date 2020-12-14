@@ -1,8 +1,6 @@
 var connection = require('./db');
 
 exports.insert_diary = function(req, res){
-    //console.log('3. insert_diary???');
-    //console.log(`3. insert_diary 되는지 확인.. : ${req.session.email}, ${ req.query.title}, ${req.query.date}, ${req.query.content}`);
     sql = 'INSERT INTO diary (diary_email, title, date, content) VALUES(?,?,?,?)';
     console.log('4. insert_diary session 확인 ' + req.session.email);
     values = [req.session.email, req.query.title, req.query.date, req.query.content];
@@ -16,7 +14,16 @@ exports.insert_diary = function(req, res){
     });
 }
 
+exports.show_diary = function(req, res){
+    sql = 'SELECT * FROM login WHERE id = ?';
+    value = [req.session.email];
 
-exports.delete_diary = function(res, req){
-    sql = 'DELETE FROM ';
+    connection.query(sql, value, function(err, result, fields){
+        if(err){
+            console.log('show diary err : ' + err);
+        }
+        else{
+            
+        }
+    })
 }

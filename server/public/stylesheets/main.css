@@ -295,74 +295,66 @@ top: 214px;
     border-radius: 31px;
 }
 
-#input_id{
-position: absolute;
-width: 300px;
-height: 49px;
-left: 567px;
-top: 491px;
-
-background: #FFFFFF;
-box-shadow: inset 1px 1px 10px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
-}
-#input_password{
-position: absolute;
-width: 300px;
-height: 49px;
-left: 567px;
-top: 587px;
-
-background: #FFFFFF;
-box-shadow: inset 1px 1px 10px 1px rgba(0, 0, 0, 0.1), inset -1px -1px 10px 1px rgba(0, 0, 0, 0.1);
-}
-
-#label_id{
-    
-position: absolute;
-width: 28px;
-height: 45px;
-left: 515px;
-top: 501px;
-
-font-family: godoMaum;
-font-style: normal;
-font-weight: normal;
-font-size: 48px;
-line-height: 54px;
-display: flex;
-align-items: center;
-text-align: right;
-
-color: #000000;
-}
-#label_password{
+#input_id {
     position: absolute;
-width: 108px;
-height: 45px;
-left: 436px;
-top: 589px;
-
-font-family: godoMaum;
-font-style: normal;
-font-weight: normal;
-font-size: 48px;
-line-height: 54px;
-display: flex;
-align-items: center;
-text-align: right;
-
-color: #000000;
-
+    width: 300px;
+    height: 49px;
+    left: 800px;
+    top: 350px;
+    background: #FFFFFF;
+    box-shadow: inset 1px 1px 10px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+#input_password {
+    position: absolute;
+    width: 300px;
+    height: 49px;
+    left: 800px;
+    top: 450px;
+    background: #FFFFFF;
+    box-shadow: inset 1px 1px 10px 1px rgba(0, 0, 0, 0.1), inset -1px -1px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
-button{
+#label_id {
     position: absolute;
-width: 100px;
-height: 100px;
-left: 899px;
-top: 512px;
+    width: 28px;
+    height: 45px;
+    left: 720px;
+    top: 350px;
+    font-family: godoMaum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #000000;
+}
+#label_password {
+    position: absolute;
+    width: 108px;
+    height: 45px;
+    left: 645px;
+    top: 450px;
+    font-family: godoMaum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #000000;
+}
 
-background: #FFFFFF;
-box-shadow: inset -1px -1px 4px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
-border-radius: 15px;
+button {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 899px;
+    top: 512px;
+
+    background: #FFFFFF;
+    box-shadow: inset -1px -1px 4px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }

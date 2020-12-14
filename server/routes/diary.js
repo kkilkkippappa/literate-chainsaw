@@ -7,7 +7,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('diary');
   console.log('get으로 diary 접속');
-  //console.log('diary isLogin check : ' + req.session.isLogin);
 
   if(req.query.title && req.query.date && req.query.content){
     console.log(`일기장 확인 : ${req.query.title}, ${req.query.date}, ${req.query.content}, ${req.session.isLogin}, `);
@@ -40,4 +39,7 @@ router.get('/write', function(req, res, next){
   console.log('diary/write get으로 접속!');
 });
 
+router.get('/delete', function(req, res, next){
+  
+});
 module.exports = router;
