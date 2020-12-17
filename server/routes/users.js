@@ -46,7 +46,6 @@ router.get('/signup', function(req, res){
 
 router.post('/signup', function(req, res) {
   console.log('signup (post)');
-  res.render('signup');
 
  // 회원가입 때 반드시 기재해야 할 게 다 들어있다면..
  if(req.body.email && req.body.password && req.body.grade && req.body.class && req.body.class_num && req.body.name){
@@ -54,14 +53,15 @@ router.post('/signup', function(req, res) {
   model.insert_Login(req, res, ()=>{
     console.log('에러 잡히는지 확인.');
     console.log('진짜 성공!!');
-    res.redirect('http://localhost:8080');
   });
+  
 }
 else{
   res.send('<h2>회원가입 실패</h2>');
   console.log(`회원가입 에러 확인 : ${req.body.email},  ${req.body.class_num}`);
-  res.redirect('http://localhost:8080/users/signup');
+  res.redirect('http://localhost:8080');
 }
+res.redirect('/');
   });
 
 // 로그아웃 처리

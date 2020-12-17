@@ -8,16 +8,16 @@ exports.insert_Login = function(req, res, cd){
     connection.query(sql, values, function(err, results, fields){
         if(err){
             console.log('mysql insert err-' + err);
-            //alert('이메일이 중복되었습니다. 다시 입력해주세요.');
         }
         else{
             cd();
+            console.log('에러 없는지 확인');
         }
     })
 }
 
 exports.select_Login = function(req, res, cd){
-    sql = 'SELECT * FROM login WHERE email = ?';
+    sql = 'select * from login where email = (select email from login where email = ?);';
     console.log('select_login 처리 하려고 함.');
     connection.query(sql, [req.body.login_id], function(err, results, fields){
         if(err){

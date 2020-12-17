@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기 보기</title>
+    <script>
+        var diary_date = document.getElementById('diary_date');
+        
+    </script>
+</head>
+<body>
+    <form action="http://localhost:8080/diary" method="get">
+        <label for="diary_title">제목
+            <input type="text" name="title" id = "diary_title">
+        </label>
+        <br>
+
+        <label for="diary_date">날짜
+            <input type="date" name="date" id="diary_date">
+        </label>
+        <br>
+
+        <label for="diary_title">내용
+            <input type="text" name="content" id="diary_content" style="overflow:scroll; width:500px; height:150px;">
+        </label>
+        <button class="btn">저장</button>
+    </form>
+</body>
+</html>

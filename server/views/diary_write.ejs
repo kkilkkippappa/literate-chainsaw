@@ -4,27 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>일기 쓰기</title>
-    <script>
-        var diary_date = document.getElementById('diary_date');
-        
-    </script>
+    <style>
+        @font-face {
+            font-family: godomaum;
+            src: url(GODOMAUM.TTF);
+        }
+        body{
+            position: relative;
+            width: 1440px;
+            height: 1024px;
+            background: #FFFFFF;
+            font-family:godomaum;
+        }
+        .img1{
+            height: 50%;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        #title{
+            font-size: 100px;
+            position: fixed;
+            left: 30px;
+            top: 30px;
+        }
+        #subtitle{
+            font-size: 40px;
+            position: fixed;
+            left: 100px;
+            top: 150px;
+        }
+        #insertdate{
+            position: fixed;
+            width: max-content;
+            height: max-content;
+            left: 8%;
+            top: 27%;
+            margin: 0px auto;
+        }
+        #insertdiary{
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            left: 8%;
+            top: 32%;
+        }
+        #date{
+            position: fixed;
+            border: 3px solid #e5e1ff;
+            border-radius: 10px;
+        }
+        #diary_title{
+            width: 500px;
+            height: 35px;
+            font-family: godomaum;
+            font-size: 180%;
+            margin-bottom: 25px;
+            border: 3px solid #e5e1ff;
+            border-radius: 10px;
+            padding-left: 5px;
+        }
+        #diary_content{
+            width: 1600px;
+            height: 450px;
+            font-family: godomaum;
+            font-size: 180%;
+            border: 3px solid #e5e1ff;
+            border-radius: 10px;
+            padding-left: 5px;
+            overflow:scroll;
+        }
+        #save{
+            position: fixed;
+            width: 100px;
+            height: 55px;
+            font-family: godomaum;
+            border: 3px solid #e5e1ff;
+            border-radius: 10px;
+            bottom: 5%;
+            right: 5%;
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <form action="http://localhost:8080/diary" method="get">
-        <label for="diary_title">제목
-            <input type="text" name="title" id = "diary_title">
-        </label>
-        <br>
-
-        <label for="diary_date">날짜
-            <input type="date" name="date" id="diary_date">
-        </label>
-        <br>
-
-        <label for="diary_title">내용
-            <input type="text" name="content" id="diary_content" style="overflow:scroll; width:500px; height:150px;">
-        </label>
-        <button class="btn">저장</button>
+    <div id="title">일기장 * Diary</div>
+    <div id="subtitle">
+        오늘 당신의 하루는 어땠나요?<br>
+        하루를 돌아보며 기록해보아요!
+        </div>
+    <form action="http://localhost:8080/diary" method="post">
+        <div id="insertdiary">
+                <input type="text" name="title" placeholder="제목을 입력하세요" id = "diary_title">
+                <input type="text" name="content" placeholder="내용을 입력하세요" id="diary_content">
+        </div>
+        <div id="insertdate">
+                <input type="date" name="date" id="diary_date">
+        </div>
+        <div id="save">
+            <button class="btn">저장</button>
+        </div>
     </form>
 </body>
 </html>

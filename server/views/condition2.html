@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>condition</title>
-     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <style>
         @font-face {
             font-family: godomaum;
@@ -66,70 +65,59 @@
         <form oninput="x.value=parseInt(a.value)" action="http://localhost:8080/condition" method="get" id="asdf">
             <br>
             <br>
-            
             <div id="colorcircle"></div>
-            <input type="range" id="a" name="condition_range" min="1" max="10" onchange="setColor()">
-            <output name="x" for="a" id="condition_value"></output><br>
-            <button>저장하기</button>
+            <input type="range" id="a" name="condition_range" min="1" max="10">
+            <output name="x" for="a" id="fdsa"></output><br>
         </form>
     </div>
-    
     <script>
+        var value = document.getElementById('condition_value');
+        var colorcode = 0;
         var date = new Date();
         // date 값 잘라내기
         var date_string = date.toISOString();
         date_string = date_string.replace("T"," ");
         date_string = date_string.substring(0, date_string.length - 5);
         date_string = date_string.substring(0, 10);
-
-        var colorcode = '';
-
-        const setColor = () => {
-            let value = document.getElementById('condition_value');
-            let value_text = value.innerHTML;
-            //alert('확인!');
-            //alert('value_text 확인 : ' + value_text);
-            // 컬러코드 값 지정
-            value_text = parseInt(value_text);
-            if(Number.isInteger(value_text)){
-                //alert('정수입니다');
-            switch(value_text){
+        
+        // 컬러코드 값 지정
+        value = parseInt(value);
+        if(Number.isInteger(value)){
+            switch(value){
             case 1:
-                colorcode = "#7a70ff";
+                colorcode = "7a70ff";
                 break;
             case 2:
-                colorcode = "#7088ff";
+                colorcode = "7088ff";
                 break;
             case 3:
-                colorcode = "#70cdff";
+                colorcode = "70cdff";
                 break;
             case 4:
-                colorcode = "#70fff8";
+                colorcode = "70fff8";
                 break;
             case 5:
-                colorcode = "#70ffba";
+                colorcode = "70ffba";
                 break;
             case 6:
-                colorcode = "#70ff75";
+                colorcode = "70ff75";
                 break;
             case 7:
-                colorcode = "#70ffba";
+                colorcode = "70ffba";
                 break;
             case 8:
-                colorcode = "#ffec70";
+                colorcode = "ffec70";
                 break;
             case 9:
-                colorcode = "#ff9670";
+                colorcode = "ff9670";
                 break;
             case 10:
-                colorcode = "#ff7070";
+                colorcode = "ff7070";
                 break;
             }
-            //alert('컬러코드 : ' + colorcode);
-            $("#colorcircle").css('backgroundColor', colorcode);
         }
-        }
-        setColor();
+    
+        // circle css color 부분에 colorcode 값 넣어주기
     </script>
 </body>
 </html>
