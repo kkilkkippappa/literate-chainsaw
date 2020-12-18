@@ -71,16 +71,17 @@
             <input type="range" id="a" name="condition_range" min="1" max="10" onchange="setColor()">
             <output name="x" for="a" id="condition_value"></output><br>
             <button>저장하기</button>
+            <input type="">
         </form>
     </div>
     
     <script>
-        var date = new Date();
-        // date 값 잘라내기
-        var date_string = date.toISOString();
-        date_string = date_string.replace("T"," ");
-        date_string = date_string.substring(0, date_string.length - 5);
-        date_string = date_string.substring(0, 10);
+        // var date = new Date();
+        // // date 값 잘라내기
+        // var date_string = date.toISOString();
+        // date_string = date_string.replace("T"," ");
+        // date_string = date_string.substring(0, date_string.length - 5);
+        // date_string = date_string.substring(0, 10);
 
         var colorcode = '';
 

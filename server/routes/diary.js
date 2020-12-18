@@ -11,14 +11,6 @@ router.get('/', function(req, res, next) {
   if(req.session.isLogin == true){
     res.render('diary');
     console.log('get으로 diary 접속');
-
-  // if(req.query.title && req.query.date && req.query.content){
-  //   console.log(`일기장 확인 : ${req.query.title}, ${req.query.date}, ${req.query.content}, ${req.session.isLogin}, `);
-  //   model.insert_diary(req, res, () => {
-  //     console.log(`get 에서 diary_insery 콜백 함수 부름...`);
-  //   });
-  //   console.log('일기장 저장 성공!');
-  //   }
   }
   // 로그인을 하지 않았을 때
   else{
@@ -69,8 +61,24 @@ router.get('/show/:iddiary', function(req, res, next){
 
 // 다이어리 수정하기
 router.post('/modify/:iddiary', function(req, res){
-  let id = req.params.iddiaty;
-  model.click_diary(req, res, id)
+  var id = req.params.iddiary;
+  console.log(`다이어리 수정 post id : ${id}`);
+  model.modify_select_diary(req, res, id);
 
 })
+
+router.post('http://localhost:8080/diary/modify/:iddiary/save', function(req, res){
+  var id = req.params.iddiary;
+  console.log(`다이어리 수정 저장 post id : ${id}`);
+  model.modify_update_diary(req, res, id, ()=>{
+    res.redirect('http://localhost:8080/diary');
+  });
+})
+
+router.post('/delete/:iddiary', function(req, res){
+  var id = req.params.iddiary;
+  console.log('다이어리 삭제 post로 받음. : ' + id);
+
+  
+});
 module.exports = router;

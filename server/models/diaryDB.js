@@ -55,7 +55,7 @@ exports.count_diary = function(req, res, cnt){
 exports.click_diary = function(req, res, id){
     sql = 'select * from diary, login where iddiary = ? and login.email = ?';
     value = [id, req.session.email];
-    console.log(`click_diary에서 나왔습니다! = ${req.params.iddiary}`);
+    console.log(`click_diary에서 나왔습니다! = ${id}`);
 
     connection.query(sql, value, function(err, results){
         if(err){
@@ -64,7 +64,7 @@ exports.click_diary = function(req, res, id){
         else{
             console.log('show diary');
             console.log(`results : ${results[0]}`);
-            //res.render('diary_read', {title:results[0].title, rows: results});
+            res.render('diary_read', {title:results[0].title, rows: results});
         }
     })
 };
@@ -72,15 +72,30 @@ exports.click_diary = function(req, res, id){
 exports.modify_select_diary = function(req, res, id){
     sql = 'select * from diary, login where iddiary = ? and login.email = ?';
     value = [id, req.session.email];
-    console.log(`click_diary에서 나왔습니다! = ${req.params.iddiary}`);
+    console.log(`modify_diary에서 나왔습니다! = ${req.params.iddiary}`);
 
     connection.query(sql, value, function(err, results){
         if(err){
-            console.log('다이어리 보여주기  : ' + err);
+            console.log('다이어리 수정 : ' + err);
         }
         else{
-            console.log('show diary');
+            console.log(`results 확인 : ${results[0].title}`);
+            console.log('show diary : ' + results[0].title);
             res.render('diary_modify', {rows: results});
         }
     })
 };
+exports.modify_update_diary = function(req, res, id, cd){
+    sql = 'update diary set diary_email = ?, title = ?, date = ?, content = ? where iddiary = ?';
+    values = [req.session.email, req.body.title, req.body.date, req.body.connection, id];
+    
+    connection.query(sql, values, function(err, results){
+        if(err){
+            console.log(`다이어리 수정 저장 에러 : ${err}`);
+        }
+        else{
+            console.log(`results 확인 : ${results[0]}`);
+            cd();
+        }
+    })
+}

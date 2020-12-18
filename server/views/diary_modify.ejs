@@ -2,38 +2,23 @@
 <html>
   <head>
     <title>일기 수정</title>
+
   </head>
   <%
     var read = rows[0];
   %>
   <body>
     <h1>일기 수정하기</h1>
-    <table border="2">
-      <tr>
-        <th>번호</th>
-        <td><%=read.iddiary%></td>
-        <th>글쓴이</th>
-        <td><%=read.writer%></td>
-      </tr>
-      <tr>
-        <th>제목</th>
-        <td colspan="5"><%=read.title%></td>
-      </tr>
-      <tr>
-        <th>작성일</th>
-        <td colspan="2"><%=read.date%></td>
-      </tr>
-      <tr>
-        <td colspan="6" height="400" ><%=read.content%></td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <a href="/diary/list"> 목록 </a>
-        </td>
-      </tr>
-    </table>
-    <form action="" method="get">
-      <button>저장</button>
-    </form>
+    
+    <form action="http://localhost:8080/diary/modify/<%=read.iddiary%>/save" method="post">
+      <div id="insertdiary">
+              <input type="text" name="title" placeholder="제목을 입력하세요" id = "diary_title">
+              <input type="text" name="content" placeholder="내용을 입력하세요" id="diary_content">
+      </div>
+      <div id="insertdate">
+              <input type="date" name="date" id="diary_date" value="<%=read.date%>" readonly>
+      </div>
+          <button id="save">저장</button>
+  </form>
   </body>
 </html>
