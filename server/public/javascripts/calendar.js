@@ -13,7 +13,7 @@ const renderCalendar = () => {
     preLast = new Date(thisYear, thisMonth, 0);
     thisLast = new Date(thisYear, thisMonth+1, 0);
     
-    // Date.getDate() => 날짜일, Date.getDat() => 해당 요일(0:일요일.)
+    // Date.getDate() => 날짜일, Date.getDate() => 해당 요일(0:일요일.)
     const PLDate = preLast.getDate();
     const PLDay = preLast.getDay();
     

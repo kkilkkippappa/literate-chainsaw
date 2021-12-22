@@ -7,7 +7,7 @@ var check = 1;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  if(check == 1){
+  if(check === 1){
     
   req.session.isLogin = false;
   check++;

@@ -38,7 +38,6 @@ var options = {
 
 var sessionStore = new MySQLStore(options);
 
-// mysql 접속이 안된다.
 app.use(session({
   HttpOnly:true,
   secret: 'subin',
